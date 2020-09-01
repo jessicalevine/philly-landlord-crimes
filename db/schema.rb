@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_201607) do
+ActiveRecord::Schema.define(version: 2020_09_01_183231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "license_violations", force: :cascade do |t|
+    t.string "violation_code"
+    t.integer "address_object_id"
+    t.string "case_number"
+    t.datetime "case_created_date"
+    t.datetime "case_completed_date"
+    t.string "case_status"
+    t.string "case_responsibility"
+    t.string "case_priority_desc"
+    t.string "violation_number"
+    t.date "violation_date"
+    t.string "violation_code_title"
+    t.string "violation_status"
+    t.date "violation_resolution_date"
+    t.string "violation_resolution_code"
+    t.datetime "most_recent_investigation"
+    t.string "opa_account_num"
+    t.string "address"
+    t.string "unit_type"
+    t.string "unit_num"
+    t.string "zip"
+    t.string "census_tract"
+    t.string "opa_owner_1"
+    t.string "opa_owner_2"
+    t.string "system_of_record"
+    t.float "geocode_x"
+    t.float "geocode_y"
+  end
 
   create_table "real_estate_tax_delinquencies", force: :cascade do |t|
     t.integer "objectid"
