@@ -1,0 +1,2 @@
+class RealEstateTaxDelinquencies < ApplicationRecord
+end
